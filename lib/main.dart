@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:media_player_tube/page/main_page.dart';
+import 'package:media_player_tube/provider/music_provider.dart';
 import 'package:media_player_tube/provider/video_provider.dart';
 import 'package:provider/provider.dart';
 
@@ -15,7 +16,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiProvider(
       providers: [
-        ChangeNotifierProvider.value(value: VideoProvider())
+        ChangeNotifierProvider.value(value: VideoProvider()),
+        ChangeNotifierProvider.value(value: MusicProvider())
       ],
       child: MaterialApp(
         title: 'Flutter Demo',

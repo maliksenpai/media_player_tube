@@ -11,8 +11,10 @@ class VideoPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    if(context.read<VideoProvider>().videoList.isEmpty){
-      context.read<VideoProvider>().getVideos();
+    VideoProvider videoProvider = context.read<VideoProvider>();
+
+    if(videoProvider.videoList.isEmpty){
+      videoProvider.getVideos();
     }
 
     return Scaffold(
@@ -21,9 +23,9 @@ class VideoPage extends StatelessWidget {
         child: context.watch<VideoProvider>().isLoading ?
         CircularProgressIndicator() :
         ListView.builder(
-          itemCount: context.watch<VideoProvider>().videoList.length,
+          itemCount: context.read<VideoProvider>().videoList.length,
           itemBuilder: (context, index){
-            var video = context.watch<VideoProvider>().videoList[index];
+            var video = context.read<VideoProvider>().videoList[index];
             return InkWell(
               onTap: () {
                 Navigator.push(
