@@ -2,6 +2,15 @@
 
 A new Flutter project. The main purpose of the application is watching videos and listening to music. The data is stored as mock data. It works in accordance with ios and android in two features.
 
+## Application Tools
+
+<ul>
+    <li>Flutter</li>
+    <li>Provider</li>
+    <li>assets_audio_player</li>
+    <li>chewie</li>
+</ul>
+
 ## Screenshots
 
 ### Android
